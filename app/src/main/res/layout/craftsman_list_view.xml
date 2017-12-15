@@ -25,6 +25,7 @@
         tools:text="TextView" />
 
     <RatingBar
+        style="@style/Widget.AppCompat.RatingBar.Indicator"
         android:id="@+id/rating"
         android:isIndicator="true"
         android:layout_width="wrap_content"

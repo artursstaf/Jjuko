@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         title = "Lokācija"
         val locationAdapter = LocationAdapter(this, R.layout.city_list_view, listOf("Liepāja", "Salaspilps", "Ogre"
                 , "Olaine", "Jūrmala", "Ventspils", "Jelgava", "Daugavpils", "Jēkabpils", "Alūksne", "Rēzekne", "Valmiera", "Cēsis", "Sigulda", "Kuldīga", "Tukums", "Talsi").sorted())
-        areasListView.adapter = locationAdapter
+        locationListView.adapter = locationAdapter
 
 
     }

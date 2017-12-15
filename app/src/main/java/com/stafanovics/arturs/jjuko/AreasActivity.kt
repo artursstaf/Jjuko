@@ -6,6 +6,7 @@ import android.view.Menu
 import android.view.MenuItem
 import com.firebase.ui.auth.AuthUI
 import com.stafanovics.arturs.jjuko.Adapters.AreasAdapter
+import kotlinx.android.synthetic.main.activity_areas.*
 
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -15,7 +16,8 @@ class AreasActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_areas)
         title = "Jomas"
-        val areaAdapter = AreasAdapter(this, R.layout.city_list_view, listOf("Elektorinstalācija", "Santehnika", "Sadzīves tehnika", "Datorremonts").sorted())
+        val areaAdapter = AreasAdapter(this, R.layout.city_list_view, listOf("Elektorinstalācija", "Santehnika", "Sadzīves tehnika",
+                "Datorremonts", "Remontdarbi", "Iekšdarbi", "Kosmētiskie darbi").sorted())
         areasListView.adapter = areaAdapter
     }
 
