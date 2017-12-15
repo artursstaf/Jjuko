@@ -22,7 +22,8 @@
         <activity
             android:name=".CraftsmanActivity"
             android:parentActivityName=".AreasActivity" />
-        <activity android:name=".ViewCraftsmanActivity"></activity>
+        <activity android:name=".ViewCraftsmanActivity"
+            android:parentActivityName=".CraftsmanActivity"/>
     </application>
 
 </manifest>

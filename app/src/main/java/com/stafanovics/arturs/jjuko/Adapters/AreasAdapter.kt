@@ -14,19 +14,19 @@ import org.jetbrains.anko.startActivity
 
 class AreasAdapter(val ctx: Context,val resource: Int, val areas: List<String>) : ArrayAdapter<String>(ctx,resource, areas){
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        var view: View? = null
+        var retView: View
         if(convertView == null){
-            view = (context as Activity).layoutInflater.inflate(R.layout.city_list_view, parent, false)
+            retView = (context as Activity).layoutInflater.inflate(R.layout.city_list_view, parent, false)
         }else{
-            view = convertView
+            retView = convertView
         }
 
 
-        val textView = view!!.findViewById<TextView>(R.id.city)
+        val textView: TextView = retView?.findViewById<TextView>(R.id.city) ?: TextView(ctx)
         val area = areas[position]
         textView.text = area
-        view.setOnClickListener { v -> ctx.startActivity<CraftsmanActivity>("Area" to area) }
+        retView.setOnClickListener { v -> ctx.startActivity<CraftsmanActivity>("Area" to area) }
 
-        return view
+        return retView
     }
 }
