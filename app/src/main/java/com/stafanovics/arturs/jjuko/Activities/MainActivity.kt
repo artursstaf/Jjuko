@@ -55,12 +55,12 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        mFirebaseAuth.addAuthStateListener(mFirebaseAuthStateListener)
+        //mFirebaseAuth.addAuthStateListener(mFirebaseAuthStateListener)
     }
 
     override fun onPause() {
         super.onPause()
-        mFirebaseAuth.removeAuthStateListener(mFirebaseAuthStateListener)
+        //mFirebaseAuth.removeAuthStateListener(mFirebaseAuthStateListener)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

@@ -4,12 +4,13 @@
     android:id="@+id/threeButtonNav"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#6dafff"
+    android:background="#795548"
     android:orientation="horizontal"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintTop_toBottomOf="@id/areasListView">
 
     <TextView
+        android:textColor="@android:color/white"
         android:fontFamily="@font/comfortaa"
         android:id="@+id/start_fragment_button"
         android:clickable="true"
@@ -23,7 +24,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
-        android:fontFamily="@font/comfortaa"
+        android:textColor="@android:color/white"
         android:clickable="true"
         android:focusable="true"
         android:background="?attr/selectableItemBackgroundBorderless"
@@ -36,7 +37,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
-        android:fontFamily="@font/comfortaa"
+        android:textColor="@android:color/white"
         android:clickable="true"
         android:focusable="true"
         android:background="?attr/selectableItemBackgroundBorderless"

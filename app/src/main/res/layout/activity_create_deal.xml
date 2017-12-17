@@ -154,25 +154,26 @@
         app:layout_constraintTop_toBottomOf="@id/create_deal_scrollView">
 
         <Button
+            android:textColor="@android:color/white"
             android:id="@+id/create_deal_reserve_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginRight="8dp"
             android:layout_weight="1"
             android:background="@drawable/button_bg_rounded_corners_red"
-            android:fontFamily="@font/comfortaa"
             android:text="Rezervēt"
             android:textAllCaps="false"
             android:textSize="20sp" />
 
         <Button
+            android:textColor="@android:color/white"
             android:id="@+id/create_deal_cancel_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
             android:layout_weight="1"
             android:background="@drawable/button_bg_rounded_corners"
-            android:fontFamily="@font/comfortaa"
+
             android:text="Atcelt"
             android:textAllCaps="false"
             android:textSize="20sp" />
