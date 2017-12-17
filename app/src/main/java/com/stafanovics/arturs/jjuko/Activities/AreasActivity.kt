@@ -1,14 +1,10 @@
-package com.stafanovics.arturs.jjuko
+package com.stafanovics.arturs.jjuko.Activities
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
-import com.firebase.ui.auth.AuthUI
 import com.stafanovics.arturs.jjuko.Adapters.AreasAdapter
+import com.stafanovics.arturs.jjuko.R
 import kotlinx.android.synthetic.main.activity_areas.*
-
-import kotlinx.android.synthetic.main.activity_main.*
 
 class AreasActivity : AppCompatActivity() {
 

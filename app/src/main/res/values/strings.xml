@@ -1,8 +1,5 @@
 <resources>
     <string name="app_name">Jjuko</string>
     <string name="craftsman_descriptions_text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur varius semper pellentesque. Ut elementum eros nec libero porta sagittis. Mauris laoreet eget quam in fringilla. Nulla facilisi. Donec vestibulum ut ligula nec porttitor. Etiam eget malesuada risus. Aliquam eget elit nibh.
-Pellentesque maximus dictum neque sed tincidunt. In quis velit enim. Ut mollis, lectus ac egestas ullamcorper, nisi elit venenatis orci, elementum finibus enim sapien a nunc. Sed eleifend, augue non convallis convallis, dui augue sollicitudin ex, nec efficitur orci orci non eros. In commodo sem et porta tempus. Nunc et nulla sagittis, varius augue facilisis, condimentum lorem. Sed tincidunt mollis lacinia. Curabitur nec egestas felis. Pellentesque vestibulum gravida sapien, ac porta dui imperdiet porta. Pellentesque vitae turpis ut felis rhoncus ornare sit amet ac mauris. Praesent porttitor iaculis nulla, eu tincidunt neque porttitor nec. Donec bibendum nulla in leo pharetra consequat. Nam fringilla nunc et felis pharetra convallis. Aenean turpis velit, varius non placerat vel, facilisis eget lacus. </string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    </string>
 </resources>

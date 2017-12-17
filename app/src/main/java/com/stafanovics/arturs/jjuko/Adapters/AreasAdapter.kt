@@ -6,8 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
-import com.stafanovics.arturs.jjuko.AreasActivity
-import com.stafanovics.arturs.jjuko.CraftsmanActivity
+import com.stafanovics.arturs.jjuko.Activities.CraftsmanActivity
 import com.stafanovics.arturs.jjuko.R
 import org.jetbrains.anko.*
 import org.jetbrains.anko.startActivity
@@ -25,7 +24,9 @@ class AreasAdapter(val ctx: Context,val resource: Int, val areas: List<String>) 
         val textView: TextView = retView?.findViewById<TextView>(R.id.city) ?: TextView(ctx)
         val area = areas[position]
         textView.text = area
-        retView.setOnClickListener { v -> ctx.startActivity<CraftsmanActivity>("Area" to area) }
+        retView.setOnClickListener { v ->
+            ctx.toast(area)
+            ctx.startActivity<CraftsmanActivity>("Area" to area) }
 
         return retView
     }

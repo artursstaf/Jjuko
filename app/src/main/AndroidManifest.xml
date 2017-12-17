@@ -3,13 +3,14 @@
     package="com.stafanovics.arturs.jjuko">
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,13 +18,24 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AreasActivity"
-            android:parentActivityName=".MainActivity" />
+            android:name=".Activities.AreasActivity"
+            android:parentActivityName=".Activities.MainActivity" />
         <activity
-            android:name=".CraftsmanActivity"
-            android:parentActivityName=".AreasActivity" />
-        <activity android:name=".ViewCraftsmanActivity"
-            android:parentActivityName=".CraftsmanActivity"/>
+            android:name=".Activities.CraftsmanActivity"
+            android:parentActivityName=".Activities.MainActivity" />
+        <activity
+            android:name=".Activities.ViewCraftsmanActivity"
+            android:parentActivityName=".Activities.MainActivity" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <activity
+            android:name=".Activities.CreateDealActivity"
+            android:parentActivityName=".Activities.MainActivity"
+            android:windowSoftInputMode="stateHidden"/>
+        <activity android:name=".Activities.DealsList"></activity>
     </application>
 
 </manifest>

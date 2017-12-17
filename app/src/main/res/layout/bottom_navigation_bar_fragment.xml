@@ -3,38 +3,47 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/threeButtonNav"
     android:layout_width="match_parent"
-    android:layout_height="50dp"
+    android:layout_height="wrap_content"
     android:background="#6dafff"
     android:orientation="horizontal"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintTop_toBottomOf="@id/areasListView">
 
     <TextView
-        android:id="@+id/profile_fragment_button"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:fontFamily="@font/comfortaa"
+        android:id="@+id/start_fragment_button"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackgroundBorderless"
         android:layout_weight="1"
-        android:background="#6dafff"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
         android:gravity="center"
-        android:text="Profils"
+        android:text="Sākums"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
+        android:fontFamily="@font/comfortaa"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackgroundBorderless"
         android:id="@+id/deals_fragment_button"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:background="#6dafff"
         android:gravity="center"
         android:text="Darījumi"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
+        android:fontFamily="@font/comfortaa"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackgroundBorderless"
         android:id="@+id/favorites_fragment_button"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:background="#6dafff"
         android:gravity="center"
         android:text="Favorīti"
         android:textAppearance="?android:attr/textAppearanceLarge" />

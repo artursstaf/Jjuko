@@ -8,11 +8,12 @@ import android.widget.ArrayAdapter
 import android.widget.RatingBar
 import android.widget.TextView
 import com.stafanovics.arturs.jjuko.R
-import com.stafanovics.arturs.jjuko.ViewCraftsmanActivity
+import com.stafanovics.arturs.jjuko.Activities.ViewCraftsmanActivity
+import com.stafanovics.arturs.jjuko.DataClasses.Craftsman
 import org.jetbrains.anko.*
 import java.util.*
 
-class CraftsmanAdapter(val ctx: Context,val resource: Int, val craftsmen: List<String>) : ArrayAdapter<String>(ctx,resource, craftsmen){
+class CraftsmanAdapter(val ctx: Context,val resource: Int, val craftsmen: List<Craftsman>) : ArrayAdapter<Craftsman>(ctx,resource, craftsmen){
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         var view: View?
         if(convertView == null){
@@ -24,13 +25,12 @@ class CraftsmanAdapter(val ctx: Context,val resource: Int, val craftsmen: List<S
 
         val textView = view!!.findViewById<TextView>(R.id.craftsman)
         val craftsman = craftsmen[position]
-        textView.text = craftsman
+        textView.text = craftsman.name + " " + craftsman.surname
         val ratingBar = view.findViewById<RatingBar>(R.id.rating)
-        val r = Random()
-        val number = r.nextInt(6)
-        ratingBar.rating = number.toFloat()
+        ratingBar.rating = craftsman.averageRating
 
-        view.setOnClickListener { v -> ctx.startActivity<ViewCraftsmanActivity>("Craftsman" to craftsman) }
+        view.setOnClickListener { v ->
+            ctx.startActivity<ViewCraftsmanActivity>("Craftsman" to position) }
 
         return view
     }

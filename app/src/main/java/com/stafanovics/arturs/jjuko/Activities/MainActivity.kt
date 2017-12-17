@@ -1,4 +1,4 @@
-package com.stafanovics.arturs.jjuko
+package com.stafanovics.arturs.jjuko.Activities
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -7,6 +7,7 @@ import android.view.MenuItem
 import com.firebase.ui.auth.AuthUI
 import com.google.firebase.auth.FirebaseAuth
 import com.stafanovics.arturs.jjuko.Adapters.LocationAdapter
+import com.stafanovics.arturs.jjuko.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -31,6 +32,7 @@ class MainActivity : AppCompatActivity() {
                         AuthUI.getInstance()
                                 .createSignInIntentBuilder()
                                 .setAvailableProviders(providers)
+                                .setIsSmartLockEnabled(false)
                                 .build(),
                         RC_SIGN_IN);
             }

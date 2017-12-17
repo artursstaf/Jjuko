@@ -6,12 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
-import com.stafanovics.arturs.jjuko.AreasActivity
+import com.stafanovics.arturs.jjuko.Activities.AreasActivity
 import com.stafanovics.arturs.jjuko.R
 import org.jetbrains.anko.*
 import org.jetbrains.anko.startActivity
 
-class LocationAdapter(val ctx: Context,val resource: Int, val cities: List<String>) : ArrayAdapter<String>(ctx,resource, cities){
+class LocationAdapter(val ctx: Context,val resource: Int, val cities: List<String>) : ArrayAdapter<String>(ctx, resource, cities){
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         var view: View? = null
         if(convertView == null){
@@ -23,7 +23,9 @@ class LocationAdapter(val ctx: Context,val resource: Int, val cities: List<Strin
         val textView = view!!.findViewById<TextView>(R.id.city)
         val city = cities[position]
         textView.text = city
-        view.setOnClickListener { v -> ctx.startActivity<AreasActivity>("City" to city) }
+        view.setOnClickListener { v ->
+            ctx.toast(city)
+            ctx.startActivity<AreasActivity>("City" to city) }
         return view
     }
 }

@@ -1,20 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="@drawable/dust_scratches"
-    android:layout_height="match_parent">
+    android:orientation="vertical">
 
     <ScrollView
         android:id="@+id/ScrollView01"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@id/craftsmanViewFragmentNav"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:context="com.stafanovics.arturs.jjuko.ViewCraftsmanActivity">
+        app:layout_constraintVertical_bias="0.0"
+        tools:context="com.stafanovics.arturs.jjuko.Activities.ViewCraftsmanActivity">
 
 
         <android.support.v7.widget.LinearLayoutCompat
@@ -24,6 +31,7 @@
             android:orientation="vertical">
 
             <android.support.v7.widget.LinearLayoutCompat
+                android:id="@+id/view_craftsman_linear_craftsman_info"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -38,6 +46,7 @@
                     android:id="@+id/crafstsman_name"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:fontFamily="@font/comfortaa"
                     android:gravity="center"
                     android:text="TextView"
                     android:textAppearance="?android:attr/textAppearanceLarge"
@@ -46,28 +55,35 @@
             </android.support.v7.widget.LinearLayoutCompat>
 
             <TextView
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
                 android:id="@+id/TEXT_VIEW"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/comfortaa"
                 android:text="@string/craftsman_descriptions_text"
                 android:textSize="20sp" />
 
             <CalendarView
                 android:id="@+id/calendarView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="#19616161"
+                android:fontFamily="@font/comfortaa" />
 
             <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_margin="8dp">
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/time"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/comfortaa"
                     android:gravity="center"
                     android:text="Laiks:"
                     android:textAppearance="?android:attr/textAppearanceLarge"
@@ -81,12 +97,37 @@
                     android:layout_margin="8dp"
                     android:layout_marginBottom="8dp"
                     android:layout_marginEnd="8dp"
+                    android:fontFamily="@font/comfortaa"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent" />
+
+
             </android.support.constraint.ConstraintLayout>
 
+            <Button
+                android:id="@+id/craftsman_view_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_margin="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="#e666bb6a"
+                android:fontFamily="@font/comfortaa"
+                android:text="Izveidot pieteikumu"
+                android:textAllCaps="false"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
         </android.support.v7.widget.LinearLayoutCompat>
-
-
     </ScrollView>
-</android.support.v7.widget.LinearLayoutCompat>
+
+    <fragment
+        android:id="@+id/craftsmanViewFragmentNav"
+
+        android:name="com.stafanovics.arturs.jjuko.Fragments.BottomNavigationBarFragment"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
