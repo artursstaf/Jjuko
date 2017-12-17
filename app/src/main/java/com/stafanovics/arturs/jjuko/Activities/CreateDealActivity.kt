@@ -28,6 +28,7 @@ class CreateDealActivity : AppCompatActivity() {
             val str = df2.format(dateObj)
             date.text = str
             textClock.text = intent.getStringExtra("Time")
+            create_deal_checkBox.visibility = View.GONE
             create_deal_cancel_button.setOnClickListener { onBackPressed() }
 
             create_deal_reserve_button.setOnClickListener {
@@ -45,6 +46,8 @@ class CreateDealActivity : AppCompatActivity() {
             val str = df2.format(dateObj)
             date.text = str
             textClock.text = deal.time
+            create_deal_checkBox.text = if(deal.accepted) "Apstirpināts" else "Neapstiprināts"
+            create_deal_checkBox.isChecked = deal.accepted
             description.setText(deal.description, TextView.BufferType.EDITABLE)
             description.isEnabled = false
             description.setTextIsSelectable(true)

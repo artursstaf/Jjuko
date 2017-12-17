@@ -9,6 +9,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.stafanovics.arturs.jjuko.Adapters.LocationAdapter
 import com.stafanovics.arturs.jjuko.R
 import kotlinx.android.synthetic.main.activity_main.*
+import org.jetbrains.anko.ctx
+import org.jetbrains.anko.toast
 
 
 class MainActivity : AppCompatActivity() {
@@ -70,6 +72,10 @@ class MainActivity : AppCompatActivity() {
         return when (item!!.itemId) {
             R.id.menu_logout -> {
                 AuthUI.getInstance().signOut(this); return true
+            }
+            R.id.menu_profile ->{
+                toast("Nestrādā :(")
+                return true
             }
             else -> super.onOptionsItemSelected(item)
         }
