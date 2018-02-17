@@ -1,15 +1,15 @@
 package com.stafanovics.arturs.jjuko.Activities
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.TextView
 import com.stafanovics.arturs.jjuko.DataClasses.Deal
 import com.stafanovics.arturs.jjuko.MyApplication
 import com.stafanovics.arturs.jjuko.R
 import kotlinx.android.synthetic.main.activity_create_deal.*
+import org.jetbrains.anko.longToast
 import org.jetbrains.anko.startActivity
-import org.jetbrains.anko.toast
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -34,11 +34,14 @@ class CreateDealActivity : AppCompatActivity() {
             create_deal_reserve_button.setOnClickListener {
                 (application as MyApplication).deals.add(Deal(craftman, intent.getLongExtra("Date", 0),
                         intent.getStringExtra("Time"), false, description.text.toString()))
-                toast("Rezervācija izveidota")
-                startActivity<DealsList>()
+                longToast("Paldies! Rezervācja pieņemta")
+                startActivity<DealsListActivity>()
             }
             //Deal exists
         }else{
+            create_deal_foto_textView.visibility = View.GONE
+            create_deal_foto_upload.visibility = View.GONE
+            title = "Darijuma apskatīšana"
             val deal = (application as MyApplication).deals[intent.getIntExtra("Deal", 0)]
             crafstsman_name.text = deal.craftsman.name + " " + deal.craftsman.surname
             val dateObj = Date(deal.date)
@@ -53,8 +56,9 @@ class CreateDealActivity : AppCompatActivity() {
             description.setTextIsSelectable(true)
             create_deal_reserve_button.visibility = View.GONE
             create_deal_cancel_button.setOnClickListener {
+                longToast("Darījums atcelts!")
                 (application as MyApplication).deals.removeAt(intent.getIntExtra("Deal", 0))
-                startActivity<DealsList>()
+                startActivity<DealsListActivity>()
             }
         }
     }

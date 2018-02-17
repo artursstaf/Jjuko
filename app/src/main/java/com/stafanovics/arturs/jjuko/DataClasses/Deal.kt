@@ -1,3 +1,7 @@
 package com.stafanovics.arturs.jjuko.DataClasses
 
-data class Deal(val craftsman: Craftsman, val date: Long, val time: String, val accepted: Boolean, val description: String)
+import com.google.firebase.firestore.Exclude
+import java.io.Serializable
+
+data class Deal(val craftsman: Craftsman = Craftsman(), val date: Long = 0, val time: String = "",
+                val accepted: Boolean = false, val description: String = "", @get:Exclude var id: String = "") : Serializable

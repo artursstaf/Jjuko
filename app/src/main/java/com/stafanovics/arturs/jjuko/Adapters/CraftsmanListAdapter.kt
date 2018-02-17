@@ -7,13 +7,12 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.RatingBar
 import android.widget.TextView
-import com.stafanovics.arturs.jjuko.R
-import com.stafanovics.arturs.jjuko.Activities.ViewCraftsmanActivity
+import com.stafanovics.arturs.jjuko.Activities.CraftsmanActivity
 import com.stafanovics.arturs.jjuko.DataClasses.Craftsman
-import org.jetbrains.anko.*
-import java.util.*
+import com.stafanovics.arturs.jjuko.R
+import org.jetbrains.anko.startActivity
 
-class CraftsmanAdapter(val ctx: Context,val resource: Int, val craftsmen: List<Craftsman>) : ArrayAdapter<Craftsman>(ctx,resource, craftsmen){
+class CraftsmanListAdapter(val ctx: Context, val resource: Int, val craftsmen: List<Craftsman>) : ArrayAdapter<Craftsman>(ctx, resource, craftsmen) {
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         var view: View?
         if(convertView == null){
@@ -30,7 +29,8 @@ class CraftsmanAdapter(val ctx: Context,val resource: Int, val craftsmen: List<C
         ratingBar.rating = craftsman.averageRating
 
         view.setOnClickListener { v ->
-            ctx.startActivity<ViewCraftsmanActivity>("Craftsman" to position) }
+            ctx.startActivity<CraftsmanActivity>("Craftsman" to position)
+        }
 
         return view
     }

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/dust_scratches"
-    tools:context="com.stafanovics.arturs.jjuko.Activities.MainActivity">
+    tools:context="com.stafanovics.arturs.jjuko.Activities.LocationListActivity">
 
     <ListView
         android:id="@+id/dealsListView"

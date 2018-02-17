@@ -10,13 +10,12 @@ import android.widget.TextView
 import com.stafanovics.arturs.jjuko.Activities.CreateDealActivity
 import com.stafanovics.arturs.jjuko.DataClasses.Deal
 import com.stafanovics.arturs.jjuko.R
-import com.stafanovics.arturs.jjuko.R.id.linear_layout_buttons
 import org.jetbrains.anko.startActivity
 import java.text.SimpleDateFormat
 import java.util.*
 
 
-class DealsAdapter(val ctx: Context, val resource: Int, val deals: List<Deal>) : ArrayAdapter<Deal>(ctx, resource, deals){
+class DealListAdapter(val ctx: Context, val resource: Int, val deals: List<Deal>) : ArrayAdapter<Deal>(ctx, resource, deals) {
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         var view: View?
 

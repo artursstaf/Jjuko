@@ -5,9 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/dust_scratches"
-    tools:context="com.stafanovics.arturs.jjuko.Activities.MainActivity"
     android:descendantFocusability="beforeDescendants"
-    android:focusableInTouchMode="true">
+    android:focusableInTouchMode="true"
+    tools:context="com.stafanovics.arturs.jjuko.Activities.LocationListActivity">
 
     <SearchView
         android:id="@+id/location_search"

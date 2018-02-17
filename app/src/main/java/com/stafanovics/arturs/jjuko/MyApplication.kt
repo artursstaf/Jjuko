@@ -1,23 +1,51 @@
 package com.stafanovics.arturs.jjuko
 
 import android.app.Application
+import android.util.Log
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.FirebaseFirestoreException
+import com.google.firebase.firestore.ListenerRegistration
+import com.google.firebase.firestore.QuerySnapshot
 import com.stafanovics.arturs.jjuko.DataClasses.Craftsman
 import com.stafanovics.arturs.jjuko.DataClasses.Deal
+import com.stafanovics.arturs.jjuko.Events.CraftsmanUpdated.OnCraftsmanUpdatedEventListener
 
 
-class MyApplication : Application() {
-    val craftsmen = ArrayList<Craftsman>()
-    val deals = ArrayList<Deal>()
-    init{
+class MyApplication(val craftsmen: MutableList<Craftsman> = ArrayList<Craftsman>(), val deals: MutableList<Deal> = ArrayList<Deal>(),
+                    private val onCraftsmanUpdatedEventListeners: MutableList<OnCraftsmanUpdatedEventListener> = ArrayList<OnCraftsmanUpdatedEventListener>()
+) : Application() {
 
-        craftsmen.add( Craftsman(5.0f,"Jānis", "Bērziņš", "21234567", "Ļoti labs", listOf("Olaine", "Valmiera"), listOf("Datorremonts, Elektroinstalācija")))
-        craftsmen.add(Craftsman(4.5f, "Alberts", "Liepiņš", "21234567", "Ļoti labs", listOf("Olaine", "Valmiera"), listOf("Datorremonts", "Elektroinstalācija")))
-        craftsmen.add(Craftsman(4.0f, "Jānis", "Ozoliņš", "21234567", "Ļoti labs", listOf("Olaine", "Valmiera"), listOf("Datorremonts", "Elektroinstalācija")))
-        craftsmen.add(Craftsman(4.0f, "Jēkabs", "Bērziņš", "21234567", "Ļoti labs", listOf("Olaine", "Valmiera"), listOf("Datorremonts", "Elektroinstalācija")))
-        craftsmen.add(Craftsman(3.5f, "Valdis", "Jansons", "21234567", "Ļoti labs", listOf("Olaine", "Valmiera"), listOf("Datorremonts", "Elektroinstalācija")))
-        craftsmen.add(Craftsman(3.5f, "Kaspars", "Skuja", "21234567", "Ļoti labs", listOf("Olaine", "Valmiera"), listOf("Datorremonts", "Elektroinstalācija")))
+    private val mFirestore by lazy { FirebaseFirestore.getInstance() }
+    private var mLocationListenerRegistration: ListenerRegistration? = null
 
-        deals.add(Deal(craftsmen[0],1513527060500,"18:20",true, "Jāsalabo krāns"))
-        deals.add(Deal(craftsmen[1], 1513529412, "12:10", false, "Jānokrāso tapetes"))
+    override fun onCreate() {
+        super.onCreate()
+        mLocationListenerRegistration = mFirestore.collection("Craftsmen").addSnapshotListener(mLocationEventListener)
+    }
+
+
+    //Listeners for Activities
+    fun addOnCraftsmanUpdateListener(listener: OnCraftsmanUpdatedEventListener) {
+        onCraftsmanUpdatedEventListeners.add(listener)
+    }
+
+    fun removeOnCraftsmanUpdateListener(listener: OnCraftsmanUpdatedEventListener) {
+        onCraftsmanUpdatedEventListeners.removeAll { it == listener }
+    }
+
+    //FireStoreListener
+    private val mLocationEventListener = { querySnapshot: QuerySnapshot?, _: FirebaseFirestoreException? ->
+        craftsmen.clear()
+        querySnapshot?.forEach {
+            val id = it.id
+            try {
+                craftsmen.add(it.toObject(Craftsman::class.java).also { it.id = id })
+            } catch (e: Exception) {
+                Log.d("FIRESTORE", "Error serializing firestore snapshot, item skipped")
+            }
+
+        }
+        onCraftsmanUpdatedEventListeners.forEach { it.onEvent(craftsmen) }
+        Unit
     }
 }

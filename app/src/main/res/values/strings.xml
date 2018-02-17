@@ -1,5 +1,16 @@
 <resources>
     <string name="app_name">Jjuko</string>
-    <string name="craftsman_descriptions_text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur varius semper pellentesque. Ut elementum eros nec libero porta sagittis. Mauris laoreet eget quam in fringilla. Nulla facilisi. Donec vestibulum ut ligula nec porttitor. Etiam eget malesuada risus. Aliquam eget elit nibh.
+
+    <string name="craftsman_descriptions_text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur varius semper pellentesque.
     </string>
+
+    <!--Activity titles-->
+    <string name="title_area_list">Jomas</string>
+    <string name="title_deal_list">Darījumi</string>
+    <string name="title_location_list">Lokācija</string>
+    <string name="title_craftsman_list">Meistari</string>
+
+    <!--Menu-->
+    <string name="menu_logout">Izrakstīties</string>
+    <string name="menu_profile">Profils</string>
 </resources>

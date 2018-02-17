@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/dust_scratches"
@@ -126,15 +125,38 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <CheckBox
-                android:clickable="false"
                 android:id="@+id/create_deal_checkBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
+                android:clickable="false"
                 android:text="Apstiprināts"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/description" />
+
+            <ImageButton
+                android:id="@+id/create_deal_foto_upload"
+                android:layout_width="67dp"
+                android:layout_height="42dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/description"
+                app:srcCompat="@android:drawable/ic_menu_upload" />
+
+            <TextView
+                android:id="@+id/create_deal_foto_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/comfortaa"
+                android:text="Fotogrāfijas: "
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                app:layout_constraintBottom_toBottomOf="@+id/create_deal_foto_upload"
+                app:layout_constraintStart_toStartOf="@+id/create_deal_checkBox"
+                app:layout_constraintTop_toTopOf="@+id/create_deal_foto_upload" />
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
 
@@ -154,7 +176,6 @@
         app:layout_constraintTop_toBottomOf="@id/create_deal_scrollView">
 
         <Button
-            android:textColor="@android:color/white"
             android:id="@+id/create_deal_reserve_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -163,19 +184,20 @@
             android:background="@drawable/button_bg_rounded_corners_red"
             android:text="Rezervēt"
             android:textAllCaps="false"
+            android:textColor="@android:color/white"
             android:textSize="20sp" />
 
         <Button
-            android:textColor="@android:color/white"
             android:id="@+id/create_deal_cancel_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
             android:layout_weight="1"
             android:background="@drawable/button_bg_rounded_corners"
-
             android:text="Atcelt"
+
             android:textAllCaps="false"
+            android:textColor="@android:color/white"
             android:textSize="20sp" />
     </android.support.v7.widget.LinearLayoutCompat>
 

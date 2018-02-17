@@ -21,7 +21,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        tools:context="com.stafanovics.arturs.jjuko.Activities.ViewCraftsmanActivity">
+        tools:context="com.stafanovics.arturs.jjuko.Activities.CraftsmanActivity">
 
 
         <android.support.v7.widget.LinearLayoutCompat
@@ -55,11 +55,11 @@
             </android.support.v7.widget.LinearLayoutCompat>
 
             <TextView
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"
                 android:id="@+id/TEXT_VIEW"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
                 android:fontFamily="@font/comfortaa"
                 android:text="@string/craftsman_descriptions_text"
                 android:textSize="20sp" />
@@ -109,15 +109,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
                 android:layout_margin="20dp"
                 android:layout_marginBottom="20dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
                 android:background="#e666bb6a"
-                android:textColor="@android:color/white"
                 android:text="Izveidot pieteikumu"
                 android:textAllCaps="false"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@android:color/white" />
         </android.support.v7.widget.LinearLayoutCompat>
     </ScrollView>
 

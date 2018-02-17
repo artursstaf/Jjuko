@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/dust_scratches"
-    tools:context="com.stafanovics.arturs.jjuko.Activities.MainActivity">
+    tools:context="com.stafanovics.arturs.jjuko.Activities.LocationListActivity">
 
     <ListView
         android:id="@+id/areasListView"
@@ -24,4 +24,5 @@
         android:layout_height="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/areasListView"/>
+
 </android.support.constraint.ConstraintLayout>
