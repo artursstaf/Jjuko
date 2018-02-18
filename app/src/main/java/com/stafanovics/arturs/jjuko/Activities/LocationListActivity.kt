@@ -38,7 +38,7 @@ class LocationListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_location_list)
         title = getString(R.string.title_location_list)
-        locationListView.adapter = mLocationAdapter
+        list_location_list.adapter = mLocationAdapter
     }
 
 

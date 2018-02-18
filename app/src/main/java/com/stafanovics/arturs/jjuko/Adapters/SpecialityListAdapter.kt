@@ -23,7 +23,8 @@ class SpecialityListAdapter(val ctx: Context, val resource: Int, val areas: List
         val view = convertView
                 ?: (context as Activity).layoutInflater.inflate(R.layout.location_list_item, parent, false)
 
-        val textView: TextView = view.findViewById<TextView>(R.id.city) ?: TextView(ctx)
+        val textView: TextView = view.findViewById<TextView>(R.id.text_speciality_list_item)
+                ?: TextView(ctx)
 
         val speciality: Speciality = areas[position]
 

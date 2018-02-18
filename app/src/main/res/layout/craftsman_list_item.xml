@@ -11,7 +11,7 @@
     android:padding="10dp">
 
     <TextView
-        android:id="@+id/craftsman"
+        android:id="@+id/text_craftsman_list_item_full_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -23,13 +23,13 @@
         android:fontFamily="@font/comfortaa"
         android:textAppearance="?android:attr/textAppearanceLarge"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/rating"
+        app:layout_constraintEnd_toStartOf="@+id/rating_craftsman_list_item_rating"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="TextView" />
 
     <RatingBar
-        android:id="@+id/rating"
+        android:id="@+id/rating_craftsman_list_item_rating"
         style="@style/Widget.AppCompat.RatingBar.Small"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -17,6 +17,6 @@ class DealsListActivity : AppCompatActivity() {
 
         val deals = (application as MyApplication).deals
 
-        dealsListView.adapter = DealListAdapter(ctx, R.layout.deals_list_item, deals)
+        list_deals_list.adapter = DealListAdapter(ctx, R.layout.deals_list_item, deals)
     }
 }

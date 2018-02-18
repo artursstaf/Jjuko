@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.activity_speciality_list.*
 
 class SpecialityListActivity : AppCompatActivity() {
 
-    private val mListAdapter by lazy { SpecialityListAdapter(this, R.layout.location_list_item, ArrayList<Speciality>()) }
+    private val mListAdapter by lazy { SpecialityListAdapter(this, R.layout.speciality_list_item, ArrayList<Speciality>()) }
     private val mMyApplication by lazy { application as MyApplication }
     private lateinit var mFilterCity: City
 
@@ -29,7 +29,7 @@ class SpecialityListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_speciality_list)
         title = getString(R.string.title_area_list)
-        areasListView.adapter = mListAdapter
+        list_speciality.adapter = mListAdapter
 
         mFilterCity = intent.extras.get(LocationlistAdapter.INTENT_CITY) as City
     }

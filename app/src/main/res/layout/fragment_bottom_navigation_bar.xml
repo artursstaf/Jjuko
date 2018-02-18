@@ -7,10 +7,10 @@
     android:background="#347fdb"
     android:orientation="horizontal"
     app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/areasListView">
+    app:layout_constraintTop_toBottomOf="@id/list_speciality">
 
     <TextView
-        android:id="@+id/start_fragment_button"
+        android:id="@+id/text_fragment_bottom_nav_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -19,12 +19,12 @@
         android:focusable="true"
         android:fontFamily="@font/comfortaa"
         android:gravity="center"
-        android:text="Sākums"
+        android:text="@string/msg_start"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@android:color/white" />
 
     <TextView
-        android:id="@+id/deals_fragment_button"
+        android:id="@+id/text_fragment_bottom_nav_deals"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -32,12 +32,12 @@
         android:clickable="true"
         android:focusable="true"
         android:gravity="center"
-        android:text="Darījumi"
+        android:text="@string/msg_deals"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@android:color/white" />
 
     <TextView
-        android:id="@+id/favorites_fragment_button"
+        android:id="@+id/text_fragment_bottom_nav_favorties"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -45,7 +45,7 @@
         android:clickable="true"
         android:focusable="true"
         android:gravity="center"
-        android:text="Favorīti"
+        android:text="@string/msg_favorties"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@android:color/white" />
 </LinearLayout>

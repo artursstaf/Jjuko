@@ -10,7 +10,7 @@
     tools:context="com.stafanovics.arturs.jjuko.Activities.LocationListActivity">
 
     <SearchView
-        android:id="@+id/location_search"
+        android:id="@+id/search_location_list"
         android:layout_width="0dp"
         android:layout_height="30dp"
         android:layout_marginEnd="8dp"
@@ -18,30 +18,30 @@
         android:layout_marginTop="8dp"
         android:hapticFeedbackEnabled="false"
         android:iconifiedByDefault="false"
-        app:layout_constraintBottom_toTopOf="@+id/locationListView"
+        app:layout_constraintBottom_toTopOf="@+id/list_location_list"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
-        android:id="@+id/locationListView"
+        android:id="@+id/list_location_list"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
         android:focusable="false"
-        app:layout_constraintBottom_toTopOf="@id/mainFragmentNav"
+        app:layout_constraintBottom_toTopOf="@id/fragment_location_list_bottom_nav"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/location_search" >
+        app:layout_constraintTop_toTopOf="@id/search_location_list">
 
     </ListView>
 
     <fragment
-        android:id="@+id/mainFragmentNav"
+        android:id="@+id/fragment_location_list_bottom_nav"
         android:name="com.stafanovics.arturs.jjuko.Fragments.BottomNavigationBarFragment"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/locationListView"/>
+        app:layout_constraintTop_toBottomOf="@id/list_location_list" />
 
 </android.support.constraint.ConstraintLayout>

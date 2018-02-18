@@ -24,7 +24,7 @@ class LocationlistAdapter(private val ctx: Context, private val resource: Int, p
         val view: View = convertView
                 ?: (context as Activity).layoutInflater.inflate(R.layout.location_list_item, parent, false)
 
-        val textView = view.findViewById<TextView>(R.id.city)
+        val textView = view.findViewById<TextView>(R.id.text_speciality_list_item)
         val city: City = cities[position]
 
         textView.text = city.name

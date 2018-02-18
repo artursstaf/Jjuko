@@ -21,13 +21,13 @@ class BottomNavigationBarFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
 
         val view = inflater.inflate(R.layout.fragment_bottom_navigation_bar, container, false)
-        val favorites = view.find<TextView>(R.id.favorites_fragment_button)
+        val favorites = view.find<TextView>(R.id.text_fragment_bottom_nav_favorties)
         favorites.setOnClickListener { activity?.startActivity<CraftsmanListActivity>() }
 
-        val start = view.find<TextView>(R.id.start_fragment_button)
+        val start = view.find<TextView>(R.id.text_fragment_bottom_nav_start)
         start.setOnClickListener { activity?.startActivity<LocationListActivity>() }
 
-        val deals = view.find<TextView>(R.id.deals_fragment_button)
+        val deals = view.find<TextView>(R.id.text_fragment_bottom_nav_deals)
         deals.setOnClickListener { activity?.startActivity<DealsListActivity>() }
         return view
     }

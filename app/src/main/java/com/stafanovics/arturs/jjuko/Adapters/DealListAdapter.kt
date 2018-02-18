@@ -26,10 +26,10 @@ class DealListAdapter(val ctx: Context, val resource: Int, val deals: List<Deal>
         }
         view = view as View
 
-        var name = view.findViewById<TextView>(R.id.deals_name_textView)
-        var checkBox = view.findViewById<CheckBox>(R.id.deals_checkBox)
-        var date = view.findViewById<TextView>(R.id.deals_date)
-        var textClock = view.findViewById<TextView>(R.id.deals_textClock)
+        var name = view.findViewById<TextView>(R.id.text_deals_list_item_craftsman_full_name)
+        var checkBox = view.findViewById<CheckBox>(R.id.check_deals_list_item_confirmation)
+        var date = view.findViewById<TextView>(R.id.text_deals_list_item_date)
+        var textClock = view.findViewById<TextView>(R.id.text_deals_list_item_clock)
         val deal = deals[position]
 
         name.text = deal.craftsman.name + " " + deal.craftsman.surname

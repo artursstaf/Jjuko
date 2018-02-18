@@ -25,28 +25,28 @@ class CraftsmanActivity : AppCompatActivity() {
         title = getString(R.string.title_craftsman)
 
 
-        crafstsman_name.text = applicationContext.getString(R.string.msg_craftsman_full_name, mCraftsman.name, mCraftsman.surname)
+        text_craftsman_full_name.text = applicationContext.getString(R.string.msg_craftsman_full_name, mCraftsman.name, mCraftsman.surname)
 
         //Need Dynamic available time array
         val adapter = ArrayAdapter.createFromResource(ctx, R.array.dates_array, android.R.layout.simple_spinner_item)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spinner.adapter = adapter
+        spinner_craftsman_time.adapter = adapter
 
-        text_description.text = mCraftsman.description
-        setOnClickListener(craftsman_view_button, calendarView.date)
+        text_craftsman_description.text = mCraftsman.description
+        setOnClickListener(button_craftsman_create_deal, calendar_craftsman.date)
 
-        calendarView.setOnDateChangeListener { _, year, month, dayOfMonth ->
+        calendar_craftsman.setOnDateChangeListener { _, year, month, dayOfMonth ->
             val calendar = Calendar.getInstance()
             calendar.set(year, month, dayOfMonth)
             val timeInMilis = calendar.timeInMillis
-            setOnClickListener(craftsman_view_button, timeInMilis)
+            setOnClickListener(button_craftsman_create_deal, timeInMilis)
         }
     }
 
     private fun setOnClickListener(view: View, time: Long) {
         view.setOnClickListener {
             startActivity<CreateDealActivity>(
-                    "Craftsman" to mCraftsman, "Date" to time, "Time" to spinner.selectedItem.toString())
+                    "Craftsman" to mCraftsman, "Date" to time, "Time" to spinner_craftsman_time.selectedItem.toString())
         }
     }
 }

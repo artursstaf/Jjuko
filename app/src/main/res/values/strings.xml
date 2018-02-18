@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Jjuko</string>
 
-    <string name="craftsman_descriptions_text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur varius semper pellentesque.
+    <string name="msg_description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur varius semper pellentesque.
     </string>
 
     <!--Activity titles-->
@@ -18,5 +18,22 @@
 
     <!--View Craftsman-->
     <string name="msg_craftsman_full_name">%1$s %2$s</string>
+    <string name="msg_picture_of_craftsman">Picture of craftsman</string>
+    <string name="msg_time">Laiks:</string>
+    <string name="msg_button_create_deal">Izveidot pieteikumu</string>
+
+    <!--Fragment bottom nav-->
+    <string name="msg_start">Sākums</string>
+    <string name="msg_deals">Darījumi</string>
+    <string name="msg_favorties">Favorīti</string>
+
+    <!--Create Deal-->
+    <string name="msg_date_icon">Date icon</string>
+    <string name="msg_label_description">Problēmas apraksts</string>
+    <string name="msg_label_checkbox">Apstiprināts</string>
+    <string name="msg_upload_icon">Upload icon</string>
+    <string name="msg_foto">Fotogrāfijas:</string>
+    <string name="action_reserve">Rezervēt</string>
+    <string name="action_cancel">Atcelt</string>
 
 </resources>

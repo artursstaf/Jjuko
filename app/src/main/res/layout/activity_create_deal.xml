@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/dust_scratches"
@@ -11,7 +12,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
 
-        app:layout_constraintBottom_toTopOf="@id/linear_layout_buttons"
+        app:layout_constraintBottom_toTopOf="@id/linear_create_deal_buttons"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -26,7 +27,7 @@
             android:orientation="vertical">
 
             <android.support.v7.widget.LinearLayoutCompat
-                android:id="@+id/creat_deal_craftsman_info"
+                android:id="@+id/linear_create_deal_craftsman_info"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
@@ -34,26 +35,27 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:id="@+id/craftsman_profile_picture"
+                    android:id="@+id/image_create_deal_craftsman_picture"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
+                    android:contentDescription="@string/msg_picture_of_craftsman"
                     app:srcCompat="@android:drawable/sym_def_app_icon" />
 
                 <TextView
-                    android:id="@+id/crafstsman_name"
+                    android:id="@+id/text_create_deal_craftsman_full_name"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
                     android:fontFamily="@font/comfortaa"
                     android:gravity="center_vertical"
-                    android:text="TextView"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    tools:text="Craftsman name" />
 
             </android.support.v7.widget.LinearLayoutCompat>
 
             <EditText
-                android:id="@+id/description"
+                android:id="@+id/edit_create_deal_description"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
@@ -71,10 +73,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/date" />
+                app:layout_constraintTop_toBottomOf="@+id/text_create_deal_date" />
 
             <TextView
-                android:id="@+id/date"
+                android:id="@+id/text_create_deal_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -86,7 +88,7 @@
                 android:singleLine="true"
                 app:layout_constraintHorizontal_chainStyle="spread_inside"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/creat_deal_craftsman_info" />
+                app:layout_constraintTop_toBottomOf="@+id/linear_create_deal_craftsman_info" />
 
             <TextView
                 android:id="@+id/textClock"
@@ -96,21 +98,22 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/comfortaa"
-                android:text="18:32"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView"
-                app:layout_constraintStart_toEndOf="@+id/imageView"
-                app:layout_constraintTop_toTopOf="@+id/imageView" />
+                app:layout_constraintBottom_toBottomOf="@+id/image_create_deal_date"
+                app:layout_constraintStart_toEndOf="@+id/image_create_deal_date"
+                app:layout_constraintTop_toTopOf="@+id/image_create_deal_date"
+                tools:text="18:32" />
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/image_create_deal_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="8dp"
-                app:layout_constraintBottom_toBottomOf="@+id/date"
-                app:layout_constraintStart_toEndOf="@+id/date"
-                app:layout_constraintTop_toTopOf="@+id/date"
+                android:contentDescription="@string/msg_date_icon"
+                app:layout_constraintBottom_toBottomOf="@+id/text_create_deal_date"
+                app:layout_constraintStart_toEndOf="@+id/text_create_deal_date"
+                app:layout_constraintTop_toTopOf="@+id/text_create_deal_date"
                 app:srcCompat="@drawable/date_icon_image" />
 
             <TextView
@@ -120,48 +123,50 @@
                 android:layout_marginBottom="2dp"
                 android:layout_marginStart="16dp"
                 android:fontFamily="@font/comfortaa"
-                android:text="Problēmas apraksts"
-                app:layout_constraintBottom_toTopOf="@+id/description"
+                android:labelFor="@+id/edit_create_deal_description"
+                android:text="@string/msg_label_description"
+                app:layout_constraintBottom_toTopOf="@+id/edit_create_deal_description"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <CheckBox
-                android:id="@+id/create_deal_checkBox"
+                android:id="@+id/check_create_deal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:clickable="false"
-                android:text="Apstiprināts"
+                android:text="@string/msg_label_checkbox"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/description" />
+                app:layout_constraintTop_toBottomOf="@+id/edit_create_deal_description" />
 
             <ImageButton
-                android:id="@+id/create_deal_foto_upload"
+                android:id="@+id/image_create_deal_foto_upload"
                 android:layout_width="67dp"
                 android:layout_height="42dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginTop="8dp"
+                android:contentDescription="@string/msg_upload_icon"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/description"
+                app:layout_constraintTop_toBottomOf="@+id/edit_create_deal_description"
                 app:srcCompat="@android:drawable/ic_menu_upload" />
 
             <TextView
-                android:id="@+id/create_deal_foto_textView"
+                android:id="@+id/text_create_deal_foto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginStart="8dp"
                 android:fontFamily="@font/comfortaa"
-                android:text="Fotogrāfijas: "
+                android:text="@string/msg_foto"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                app:layout_constraintBottom_toBottomOf="@+id/create_deal_foto_upload"
-                app:layout_constraintStart_toStartOf="@+id/create_deal_checkBox"
-                app:layout_constraintTop_toTopOf="@+id/create_deal_foto_upload" />
+                app:layout_constraintBottom_toBottomOf="@+id/image_create_deal_foto_upload"
+                app:layout_constraintStart_toStartOf="@+id/check_create_deal"
+                app:layout_constraintTop_toTopOf="@+id/image_create_deal_foto_upload" />
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
 
     <android.support.v7.widget.LinearLayoutCompat
-        android:id="@+id/linear_layout_buttons"
+        android:id="@+id/linear_create_deal_buttons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
@@ -170,39 +175,38 @@
         android:layout_marginStart="8dp"
         android:orientation="horizontal"
         android:weightSum="2"
-        app:layout_constraintBottom_toTopOf="@+id/create_deal_ViewFragmentNav"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_create_deal_bottom_nav"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/create_deal_scrollView">
 
         <Button
-            android:id="@+id/create_deal_reserve_button"
+            android:id="@+id/button_create_deal_reserve"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginRight="8dp"
+            android:layout_marginEnd="8dp"
             android:layout_weight="1"
             android:background="@drawable/button_bg_rounded_corners_red"
-            android:text="Rezervēt"
+            android:text="@string/action_reserve"
             android:textAllCaps="false"
             android:textColor="@android:color/white"
             android:textSize="20sp" />
 
         <Button
-            android:id="@+id/create_deal_cancel_button"
+            android:id="@+id/button_create_deal_cancel"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
             android:layout_weight="1"
             android:background="@drawable/button_bg_rounded_corners"
-            android:text="Atcelt"
-
+            android:text="@string/action_cancel"
             android:textAllCaps="false"
             android:textColor="@android:color/white"
             android:textSize="20sp" />
     </android.support.v7.widget.LinearLayoutCompat>
 
     <fragment
-        android:id="@+id/create_deal_ViewFragmentNav"
+        android:id="@+id/fragment_create_deal_bottom_nav"
         android:name="com.stafanovics.arturs.jjuko.Fragments.BottomNavigationBarFragment"
         android:layout_width="match_parent"
         android:layout_height="40dp"

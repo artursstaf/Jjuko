@@ -21,11 +21,11 @@ class CraftsmanListAdapter(val ctx: Context, val resource: Int, val craftsmen: L
         val view = convertView
                 ?: (context as Activity).layoutInflater.inflate(resource, parent, false)
 
-        val textView = view.findViewById<TextView>(R.id.craftsman)
+        val textView = view.findViewById<TextView>(R.id.text_craftsman_list_item_full_name)
         val craftsman = craftsmen[position]
 
         textView.text = context.getString(R.string.msg_craftsman_full_name, craftsman.name, craftsman.surname)
-        view.findViewById<RatingBar>(R.id.rating).rating = craftsman.averageRating
+        view.findViewById<RatingBar>(R.id.rating_craftsman_list_item_rating).rating = craftsman.averageRating
 
 
         view.setOnClickListener { _ ->

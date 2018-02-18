@@ -25,7 +25,7 @@ class CraftsmanListActivity : AppCompatActivity() {
         mFilterSpeciality = intent.extras.get(SpecialityListAdapter.INTENT_SPECIALITY) as Speciality
 
 
-        craftsmanListView.adapter = mListAdapter
+        list_craftsman_list.adapter = mListAdapter
     }
 
     override fun onStart() {
