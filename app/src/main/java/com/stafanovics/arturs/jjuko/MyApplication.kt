@@ -34,9 +34,10 @@ class MyApplication(val craftsmen: MutableList<Craftsman> = ArrayList<Craftsman>
     }
 
     //FireStoreListener
-    private val mLocationEventListener = { querySnapshot: QuerySnapshot?, _: FirebaseFirestoreException? ->
+    private val mLocationEventListener = listener@ { querySnapshot: QuerySnapshot?, _: FirebaseFirestoreException? ->
+        if (querySnapshot == null) return@listener
         craftsmen.clear()
-        querySnapshot?.forEach {
+        querySnapshot.forEach {
             val id = it.id
             try {
                 craftsmen.add(it.toObject(Craftsman::class.java).also { it.id = id })
