@@ -21,7 +21,7 @@ class SpecialityListAdapter(val ctx: Context, val resource: Int, val areas: List
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val view = convertView
-                ?: (context as Activity).layoutInflater.inflate(R.layout.city_list_view, parent, false)
+                ?: (context as Activity).layoutInflater.inflate(R.layout.location_list_item, parent, false)
 
         val textView: TextView = view.findViewById<TextView>(R.id.city) ?: TextView(ctx)
 

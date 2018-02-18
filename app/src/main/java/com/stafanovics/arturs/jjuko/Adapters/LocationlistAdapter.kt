@@ -22,7 +22,7 @@ class LocationlistAdapter(private val ctx: Context, private val resource: Int, p
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
 
         val view: View = convertView
-                ?: (context as Activity).layoutInflater.inflate(R.layout.city_list_view, parent, false)
+                ?: (context as Activity).layoutInflater.inflate(R.layout.location_list_item, parent, false)
 
         val textView = view.findViewById<TextView>(R.id.city)
         val city: City = cities[position]

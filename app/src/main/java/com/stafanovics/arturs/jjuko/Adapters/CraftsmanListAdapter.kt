@@ -13,23 +13,23 @@ import com.stafanovics.arturs.jjuko.R
 import org.jetbrains.anko.startActivity
 
 class CraftsmanListAdapter(val ctx: Context, val resource: Int, val craftsmen: List<Craftsman>) : ArrayAdapter<Craftsman>(ctx, resource, craftsmen) {
+    companion object {
+        const val INTENT_CRAFTSMAN = "Craftsman"
+    }
+
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        var view: View?
-        if(convertView == null){
-            view = (context as Activity).layoutInflater.inflate(resource, parent, false)
-        }else{
-            view = convertView
-        }
+        val view = convertView
+                ?: (context as Activity).layoutInflater.inflate(resource, parent, false)
 
-
-        val textView = view!!.findViewById<TextView>(R.id.craftsman)
+        val textView = view.findViewById<TextView>(R.id.craftsman)
         val craftsman = craftsmen[position]
-        textView.text = craftsman.name + " " + craftsman.surname
-        val ratingBar = view.findViewById<RatingBar>(R.id.rating)
-        ratingBar.rating = craftsman.averageRating
 
-        view.setOnClickListener { v ->
-            ctx.startActivity<CraftsmanActivity>("Craftsman" to position)
+        textView.text = context.getString(R.string.msg_craftsman_full_name, craftsman.name, craftsman.surname)
+        view.findViewById<RatingBar>(R.id.rating).rating = craftsman.averageRating
+
+
+        view.setOnClickListener { _ ->
+            ctx.startActivity<CraftsmanActivity>(INTENT_CRAFTSMAN to craftsman)
         }
 
         return view

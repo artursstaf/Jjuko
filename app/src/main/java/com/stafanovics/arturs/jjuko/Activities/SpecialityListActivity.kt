@@ -10,11 +10,11 @@ import com.stafanovics.arturs.jjuko.DataClasses.Speciality
 import com.stafanovics.arturs.jjuko.Events.CraftsmanUpdated.OnCraftsmanUpdatedEventListener
 import com.stafanovics.arturs.jjuko.MyApplication
 import com.stafanovics.arturs.jjuko.R
-import kotlinx.android.synthetic.main.activity_speciality.*
+import kotlinx.android.synthetic.main.activity_speciality_list.*
 
 class SpecialityListActivity : AppCompatActivity() {
 
-    private val mListAdapter by lazy { SpecialityListAdapter(this, R.layout.city_list_view, ArrayList<Speciality>()) }
+    private val mListAdapter by lazy { SpecialityListAdapter(this, R.layout.location_list_item, ArrayList<Speciality>()) }
     private val mMyApplication by lazy { application as MyApplication }
     private lateinit var mFilterCity: City
 
@@ -27,7 +27,7 @@ class SpecialityListActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_speciality)
+        setContentView(R.layout.activity_speciality_list)
         title = getString(R.string.title_area_list)
         areasListView.adapter = mListAdapter
 

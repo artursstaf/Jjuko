@@ -12,7 +12,7 @@ import com.stafanovics.arturs.jjuko.DataClasses.Craftsman
 import com.stafanovics.arturs.jjuko.Events.CraftsmanUpdated.OnCraftsmanUpdatedEventListener
 import com.stafanovics.arturs.jjuko.MyApplication
 import com.stafanovics.arturs.jjuko.R
-import kotlinx.android.synthetic.main.activity_location.*
+import kotlinx.android.synthetic.main.activity_location_list.*
 import org.jetbrains.anko.toast
 import java.util.*
 import kotlin.collections.LinkedHashSet
@@ -30,13 +30,13 @@ class LocationListActivity : AppCompatActivity() {
 
     //members
     private var mUsername: String = ""
-    private val mLocationAdapter by lazy { LocationlistAdapter(this, R.layout.city_list_view, ArrayList<City>()) }
+    private val mLocationAdapter by lazy { LocationlistAdapter(this, R.layout.location_list_item, ArrayList<City>()) }
     private val mFirebaseAuth = FirebaseAuth.getInstance()
     private val mMyApplication by lazy { application as MyApplication }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_location)
+        setContentView(R.layout.activity_location_list)
         title = getString(R.string.title_location_list)
         locationListView.adapter = mLocationAdapter
     }

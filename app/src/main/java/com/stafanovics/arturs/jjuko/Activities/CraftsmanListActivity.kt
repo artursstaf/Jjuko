@@ -9,18 +9,18 @@ import com.stafanovics.arturs.jjuko.DataClasses.Speciality
 import com.stafanovics.arturs.jjuko.Events.CraftsmanUpdated.OnCraftsmanUpdatedEventListener
 import com.stafanovics.arturs.jjuko.MyApplication
 import com.stafanovics.arturs.jjuko.R
-import kotlinx.android.synthetic.main.activity_craftsman.*
+import kotlinx.android.synthetic.main.activity_craftsman_list.*
 
 class CraftsmanListActivity : AppCompatActivity() {
 
-    private val mListAdapter by lazy { CraftsmanListAdapter(this, R.layout.craftsman_list_view, ArrayList<Craftsman>()) }
+    private val mListAdapter by lazy { CraftsmanListAdapter(this, R.layout.craftsman_list_item, ArrayList<Craftsman>()) }
     private val mMyApplication by lazy { application as MyApplication }
     private lateinit var mFilterSpeciality: Speciality
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_craftsman)
+        setContentView(R.layout.activity_craftsman_list)
         title = getString(R.string.title_craftsman_list)
         mFilterSpeciality = intent.extras.get(SpecialityListAdapter.INTENT_SPECIALITY) as Speciality
 

@@ -24,7 +24,7 @@ class MyApplication(val craftsmen: MutableList<Craftsman> = ArrayList<Craftsman>
     }
 
 
-    //Listeners for Activities
+    //Managing listeners for Activities
     fun addOnCraftsmanUpdateListener(listener: OnCraftsmanUpdatedEventListener) {
         onCraftsmanUpdatedEventListeners.add(listener)
     }

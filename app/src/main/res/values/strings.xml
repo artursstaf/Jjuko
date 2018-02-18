@@ -9,8 +9,14 @@
     <string name="title_deal_list">Darījumi</string>
     <string name="title_location_list">Lokācija</string>
     <string name="title_craftsman_list">Meistari</string>
+    <string name="title_craftsman">Meistars</string>
 
     <!--Menu-->
     <string name="menu_logout">Izrakstīties</string>
     <string name="menu_profile">Profils</string>
+
+
+    <!--View Craftsman-->
+    <string name="msg_craftsman_full_name">%1$s %2$s</string>
+
 </resources>

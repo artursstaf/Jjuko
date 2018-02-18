@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="10dp"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:background="?attr/selectableItemBackground"
     android:clickable="true"
     android:focusable="true"
-    android:background="?attr/selectableItemBackground">
+    android:orientation="horizontal"
+    android:padding="10dp">
 
     <TextView
-        android:fontFamily="@font/comfortaa"
         android:id="@+id/craftsman"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -21,6 +20,7 @@
         android:layout_marginTop="8dp"
         android:layout_weight="1"
         android:focusable="false"
+        android:fontFamily="@font/comfortaa"
         android:textAppearance="?android:attr/textAppearanceLarge"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/rating"
@@ -29,15 +29,15 @@
         tools:text="TextView" />
 
     <RatingBar
-        style="@style/Widget.AppCompat.RatingBar.Small"
         android:id="@+id/rating"
-        android:isIndicator="true"
+        style="@style/Widget.AppCompat.RatingBar.Small"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
         android:layout_weight="1"
+        android:isIndicator="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
