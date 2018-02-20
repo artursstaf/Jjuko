@@ -2,8 +2,8 @@ package com.stafanovics.arturs.jjuko.Activities
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.stafanovics.arturs.jjuko.Adapters.LocationlistAdapter
 import com.stafanovics.arturs.jjuko.Adapters.SpecialityListAdapter
+import com.stafanovics.arturs.jjuko.Constants.INTENT_CITY
 import com.stafanovics.arturs.jjuko.DataClasses.City
 import com.stafanovics.arturs.jjuko.DataClasses.Craftsman
 import com.stafanovics.arturs.jjuko.DataClasses.Speciality
@@ -16,7 +16,7 @@ class SpecialityListActivity : AppCompatActivity() {
 
     private val mListAdapter by lazy { SpecialityListAdapter(this, R.layout.speciality_list_item, ArrayList<Speciality>(), mFilterCity) }
     private val mMyApplication by lazy { application as MyApplication }
-    private val mFilterCity by lazy { intent.extras.get(LocationlistAdapter.INTENT_CITY) as City }
+    private val mFilterCity by lazy { intent.extras.get(INTENT_CITY) as City }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

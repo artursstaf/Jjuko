@@ -8,6 +8,9 @@ import android.widget.ArrayAdapter
 import android.widget.RatingBar
 import android.widget.TextView
 import com.stafanovics.arturs.jjuko.Activities.CraftsmanActivity
+import com.stafanovics.arturs.jjuko.Constants.INTENT_CITY
+import com.stafanovics.arturs.jjuko.Constants.INTENT_CRAFTSMAN
+import com.stafanovics.arturs.jjuko.Constants.INTENT_SPECIALITY
 import com.stafanovics.arturs.jjuko.DataClasses.City
 import com.stafanovics.arturs.jjuko.DataClasses.Craftsman
 import com.stafanovics.arturs.jjuko.DataClasses.Speciality
@@ -17,9 +20,6 @@ import java.io.Serializable
 
 class CraftsmanListAdapter(val ctx: Context, val resource: Int, val craftsmen: List<Craftsman>,
                            val location: City, val speciality: Speciality) : ArrayAdapter<Craftsman>(ctx, resource, craftsmen) {
-    companion object {
-        const val INTENT_CRAFTSMAN = "Craftsman"
-    }
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val view = convertView
@@ -34,8 +34,8 @@ class CraftsmanListAdapter(val ctx: Context, val resource: Int, val craftsmen: L
 
         view.setOnClickListener { _ ->
             ctx.startActivity<CraftsmanActivity>(INTENT_CRAFTSMAN to craftsman as Serializable,
-                    LocationlistAdapter.INTENT_CITY to location as Serializable,
-                    SpecialityListAdapter.INTENT_SPECIALITY to speciality as Serializable)
+                    INTENT_CITY to location as Serializable,
+                    INTENT_SPECIALITY to speciality as Serializable)
         }
 
         return view

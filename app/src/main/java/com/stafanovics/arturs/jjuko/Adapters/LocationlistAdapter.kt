@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
 import com.stafanovics.arturs.jjuko.Activities.SpecialityListActivity
+import com.stafanovics.arturs.jjuko.Constants.INTENT_CITY
 import com.stafanovics.arturs.jjuko.DataClasses.City
 import com.stafanovics.arturs.jjuko.R
 import org.jetbrains.anko.startActivity
@@ -14,10 +15,6 @@ import org.jetbrains.anko.toast
 import java.io.Serializable
 
 class LocationlistAdapter(private val ctx: Context, private val resource: Int, private val cities: List<City>) : ArrayAdapter<City>(ctx, resource, cities) {
-
-    companion object {
-        const val INTENT_CITY = "City"
-    }
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
 
