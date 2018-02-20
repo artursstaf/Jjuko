@@ -26,7 +26,6 @@ class LocationlistAdapter(private val ctx: Context, private val resource: Int, p
 
         val textView = view.findViewById<TextView>(R.id.text_speciality_list_item)
         val city: City = cities[position]
-
         textView.text = city.name
         view.setOnClickListener { _ ->
             ctx.toast(city.name)

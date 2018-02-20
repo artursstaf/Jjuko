@@ -14,24 +14,16 @@ import kotlinx.android.synthetic.main.activity_speciality_list.*
 
 class SpecialityListActivity : AppCompatActivity() {
 
-    private val mListAdapter by lazy { SpecialityListAdapter(this, R.layout.speciality_list_item, ArrayList<Speciality>()) }
+    private val mListAdapter by lazy { SpecialityListAdapter(this, R.layout.speciality_list_item, ArrayList<Speciality>(), mFilterCity) }
     private val mMyApplication by lazy { application as MyApplication }
-    private lateinit var mFilterCity: City
-
-    fun getSpecialitiesFromCraftsmen(list: List<Craftsman>): Collection<Speciality> {
-        val listsOfSpecialities: List<List<Speciality>> = list.mapNotNull { if (it.locations.contains(mFilterCity)) it.speciality else null }
-        val specialities = LinkedHashSet<Speciality>()
-        listsOfSpecialities.forEach { it.forEach { specialities.add(it) } }
-        return specialities
-    }
+    private val mFilterCity by lazy { intent.extras.get(LocationlistAdapter.INTENT_CITY) as City }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_speciality_list)
         title = getString(R.string.title_area_list)
-        list_speciality.adapter = mListAdapter
 
-        mFilterCity = intent.extras.get(LocationlistAdapter.INTENT_CITY) as City
+        list_speciality.adapter = mListAdapter
     }
 
     override fun onStart() {
@@ -52,6 +44,13 @@ class SpecialityListActivity : AppCompatActivity() {
             mListAdapter.addAll(getSpecialitiesFromCraftsmen(craftsmen))
         }
 
+    }
+
+    private fun getSpecialitiesFromCraftsmen(list: List<Craftsman>): Collection<Speciality> {
+        val listsOfSpecialities: List<List<Speciality>> = list.mapNotNull { if (it.locations.contains(mFilterCity)) it.speciality else null }
+        val specialities = LinkedHashSet<Speciality>()
+        listsOfSpecialities.forEach { it.forEach { specialities.add(it) } }
+        return specialities
     }
 
 }

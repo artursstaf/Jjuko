@@ -7,13 +7,14 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
 import com.stafanovics.arturs.jjuko.Activities.CraftsmanListActivity
+import com.stafanovics.arturs.jjuko.DataClasses.City
 import com.stafanovics.arturs.jjuko.DataClasses.Speciality
 import com.stafanovics.arturs.jjuko.R
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 import java.io.Serializable
 
-class SpecialityListAdapter(val ctx: Context, val resource: Int, val areas: List<Speciality>) : ArrayAdapter<Speciality>(ctx, resource, areas) {
+class SpecialityListAdapter(val ctx: Context, val resource: Int, val areas: List<Speciality>, val location: City) : ArrayAdapter<Speciality>(ctx, resource, areas) {
     companion object {
         const val INTENT_SPECIALITY = "Speciality"
     }
@@ -31,7 +32,8 @@ class SpecialityListAdapter(val ctx: Context, val resource: Int, val areas: List
         textView.text = speciality.name
         view.setOnClickListener { _ ->
             ctx.toast(speciality.name)
-            ctx.startActivity<CraftsmanListActivity>(INTENT_SPECIALITY to speciality as Serializable)
+            ctx.startActivity<CraftsmanListActivity>(INTENT_SPECIALITY to speciality as Serializable,
+                    LocationlistAdapter.INTENT_CITY to location as Serializable)
         }
 
         return view

@@ -30,10 +30,12 @@
     <!--Create Deal-->
     <string name="msg_date_icon">Date icon</string>
     <string name="msg_label_description">Problēmas apraksts</string>
-    <string name="msg_label_checkbox">Apstiprināts</string>
     <string name="msg_upload_icon">Upload icon</string>
     <string name="msg_foto">Fotogrāfijas:</string>
     <string name="action_reserve">Rezervēt</string>
     <string name="action_cancel">Atcelt</string>
 
+    <string name="msg_label_checkbox_confirmed">Apstiprināts</string>
+    <string name="msg_label_checkbox_unconfirmed">Neapstirpināts</string>
+    <string name="msg_label_checkbox_denied">Noraidīts</string>
 </resources>

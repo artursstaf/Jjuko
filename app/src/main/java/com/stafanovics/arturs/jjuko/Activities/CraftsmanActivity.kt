@@ -5,7 +5,11 @@ import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.ArrayAdapter
 import com.stafanovics.arturs.jjuko.Adapters.CraftsmanListAdapter
+import com.stafanovics.arturs.jjuko.Adapters.LocationlistAdapter
+import com.stafanovics.arturs.jjuko.Adapters.SpecialityListAdapter
+import com.stafanovics.arturs.jjuko.DataClasses.City
 import com.stafanovics.arturs.jjuko.DataClasses.Craftsman
+import com.stafanovics.arturs.jjuko.DataClasses.Speciality
 import com.stafanovics.arturs.jjuko.MyApplication
 import com.stafanovics.arturs.jjuko.R
 import kotlinx.android.synthetic.main.activity_craftsman.*
@@ -18,6 +22,8 @@ class CraftsmanActivity : AppCompatActivity() {
 
     private val mMyApplication by lazy { application as MyApplication }
     private val mCraftsman by lazy { intent.extras.get(CraftsmanListAdapter.INTENT_CRAFTSMAN) as Craftsman }
+    private val mLocation by lazy { intent.extras.get(LocationlistAdapter.INTENT_CITY) as City }
+    private val mSpeciality by lazy { intent.extras.get(SpecialityListAdapter.INTENT_SPECIALITY) as Speciality }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
