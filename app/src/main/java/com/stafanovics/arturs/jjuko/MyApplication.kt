@@ -6,6 +6,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.FirebaseFirestoreException
 import com.google.firebase.firestore.ListenerRegistration
 import com.google.firebase.firestore.QuerySnapshot
+import com.stafanovics.arturs.jjuko.Constants.LOGD_FIRESTORE
 import com.stafanovics.arturs.jjuko.DataClasses.Craftsman
 import com.stafanovics.arturs.jjuko.DataClasses.Deal
 import com.stafanovics.arturs.jjuko.Events.CraftsmanUpdated.OnCraftsmanUpdatedEventListener
@@ -42,7 +43,7 @@ class MyApplication(val craftsmen: MutableList<Craftsman> = ArrayList<Craftsman>
             try {
                 craftsmen.add(it.toObject(Craftsman::class.java).also { it.id = id })
             } catch (e: Exception) {
-                Log.d("FIRESTORE", "Error serializing firestore snapshot, item skipped")
+                Log.d(LOGD_FIRESTORE, "Error serializing firestore snapshot, item skipped")
             }
 
         }

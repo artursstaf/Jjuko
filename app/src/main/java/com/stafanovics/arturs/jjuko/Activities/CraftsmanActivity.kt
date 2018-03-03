@@ -13,6 +13,7 @@ import com.stafanovics.arturs.jjuko.R
 import kotlinx.android.synthetic.main.activity_craftsman.*
 import org.jetbrains.anko.ctx
 import org.jetbrains.anko.startActivity
+import org.jetbrains.anko.toast
 import java.io.Serializable
 import java.util.*
 
@@ -42,13 +43,17 @@ class CraftsmanActivity : AppCompatActivity() {
             val calendar = Calendar.getInstance()
             calendar.set(year, month, dayOfMonth)
             val timeInMilis = calendar.timeInMillis
-
             setOnClickListener(button_craftsman_create_deal, timeInMilis)
         }
+
     }
 
     private fun setOnClickListener(view: View, time: Long) {
         view.setOnClickListener {
+            if (spinner_craftsman_time.selectedItem.toString().isBlank()) {
+                toast(ctx.getString(R.string.msg_choose_time))
+            }
+
             startActivity<CreateDealActivity>(
                     INTENT_CRAFTSMAN to mCraftsman as Serializable,
                     INTENT_CITY to mLocation as Serializable,

@@ -38,4 +38,7 @@
     <string name="msg_label_checkbox_confirmed">Apstiprināts</string>
     <string name="msg_label_checkbox_unconfirmed">Neapstirpināts</string>
     <string name="msg_label_checkbox_denied">Noraidīts</string>
+
+    <!--Messages-->
+    <string name="msg_choose_time">Lūdzu izvēlieties laiku</string>
 </resources>
