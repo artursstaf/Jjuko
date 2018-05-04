@@ -1,11 +1,12 @@
 <resources>
-    <string name="app_name">Jjuko</string>
 
-    <string name="msg_description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur varius semper pellentesque.
-    </string>
+    <string name="app_name">Jjuko</string>
+    <string name="msg_craftsman_description"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur varius semper pellentesque.</string>
 
     <!--Activity titles-->
     <string name="title_area_list">Jomas</string>
+    <string name="title_deal_create">Darījuma veidošana"</string>
+    <string name="title_deal_view">Darījuma apskatīšana</string>
     <string name="title_deal_list">Darījumi</string>
     <string name="title_location_list">Lokācija</string>
     <string name="title_craftsman_list">Meistari</string>
@@ -41,4 +42,6 @@
 
     <!--Messages-->
     <string name="msg_choose_time">Lūdzu izvēlieties laiku</string>
+    <string name="msg_reservation_accepted">Paldies! Rezervācja pieņemta</string>
+
 </resources>

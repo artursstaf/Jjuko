@@ -1,10 +1,10 @@
-package com.stafanovics.arturs.jjuko.Activities
+package com.stafanovics.arturs.jjuko.activities
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.stafanovics.arturs.jjuko.Adapters.DealListAdapter
 import com.stafanovics.arturs.jjuko.MyApplication
 import com.stafanovics.arturs.jjuko.R
+import com.stafanovics.arturs.jjuko.adapters.DealListAdapter
 import kotlinx.android.synthetic.main.activity_deals_list.*
 import org.jetbrains.anko.ctx
 

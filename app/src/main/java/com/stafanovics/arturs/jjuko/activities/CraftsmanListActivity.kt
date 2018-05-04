@@ -1,23 +1,23 @@
-package com.stafanovics.arturs.jjuko.Activities
+package com.stafanovics.arturs.jjuko.activities
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.stafanovics.arturs.jjuko.Adapters.CraftsmanListAdapter
-import com.stafanovics.arturs.jjuko.Constants.INTENT_CITY
-import com.stafanovics.arturs.jjuko.Constants.INTENT_SPECIALITY
-import com.stafanovics.arturs.jjuko.DataClasses.City
-import com.stafanovics.arturs.jjuko.DataClasses.Craftsman
-import com.stafanovics.arturs.jjuko.DataClasses.Speciality
-import com.stafanovics.arturs.jjuko.Events.CraftsmanUpdated.OnCraftsmanUpdatedEventListener
 import com.stafanovics.arturs.jjuko.MyApplication
 import com.stafanovics.arturs.jjuko.R
+import com.stafanovics.arturs.jjuko.adapters.CraftsmanListAdapter
+import com.stafanovics.arturs.jjuko.constants.INTENT_CITY
+import com.stafanovics.arturs.jjuko.constants.INTENT_SPECIALITY
+import com.stafanovics.arturs.jjuko.dataClasses.City
+import com.stafanovics.arturs.jjuko.dataClasses.Craftsman
+import com.stafanovics.arturs.jjuko.dataClasses.Speciality
+import com.stafanovics.arturs.jjuko.events.OnCraftsmanUpdatedEventListener
 import kotlinx.android.synthetic.main.activity_craftsman_list.*
 
 class CraftsmanListActivity : AppCompatActivity() {
 
     private val mListAdapter by lazy {
         CraftsmanListAdapter(this, R.layout.craftsman_list_item,
-                ArrayList<Craftsman>(), mFilterCity, mFilterSpeciality)
+                ArrayList(), mFilterCity, mFilterSpeciality)
     }
     private val mMyApplication by lazy { application as MyApplication }
     private val mFilterSpeciality by lazy { intent.extras.get(INTENT_SPECIALITY) as Speciality }
@@ -50,6 +50,5 @@ class CraftsmanListActivity : AppCompatActivity() {
             mListAdapter.clear()
             mListAdapter.addAll(filterCraftsmen(craftsmen))
         }
-
     }
 }

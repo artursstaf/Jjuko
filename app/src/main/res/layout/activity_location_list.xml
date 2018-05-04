@@ -7,7 +7,7 @@
     android:background="@drawable/dust_scratches"
     android:descendantFocusability="beforeDescendants"
     android:focusableInTouchMode="true"
-    tools:context="com.stafanovics.arturs.jjuko.Activities.LocationListActivity">
+    tools:context="com.stafanovics.arturs.jjuko.activities.LocationListActivity">
 
     <SearchView
         android:id="@+id/search_location_list"
@@ -38,7 +38,7 @@
 
     <fragment
         android:id="@+id/fragment_location_list_bottom_nav"
-        android:name="com.stafanovics.arturs.jjuko.Fragments.BottomNavigationBarFragment"
+        android:name="com.stafanovics.arturs.jjuko.fragments.BottomNavigationBarFragment"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         app:layout_constraintBottom_toBottomOf="parent"

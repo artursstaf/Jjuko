@@ -8,39 +8,35 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
+        android:fullBackupContent="@xml/backup_descriptor"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".Activities.LocationListActivity">
+        <activity android:name=".activities.LocationListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
-            android:name=".Activities.SpecialityListActivity"
-            android:parentActivityName=".Activities.LocationListActivity" />
-
+            android:name=".activities.SpecialityListActivity"
+            android:parentActivityName=".activities.LocationListActivity" />
         <activity
-            android:name=".Activities.CraftsmanListActivity"
-            android:parentActivityName=".Activities.LocationListActivity" />
-
+            android:name=".activities.CraftsmanListActivity"
+            android:parentActivityName=".activities.LocationListActivity" />
         <activity
-            android:name=".Activities.CraftsmanActivity"
-            android:parentActivityName=".Activities.LocationListActivity" />
+            android:name=".activities.CraftsmanActivity"
+            android:parentActivityName=".activities.LocationListActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
         <activity
-            android:name=".Activities.CreateDealActivity"
-            android:parentActivityName=".Activities.LocationListActivity"
-            android:windowSoftInputMode="stateHidden"/>
-
-        <activity android:name=".Activities.DealsListActivity"></activity>
-
+            android:name=".activities.DealCreateActivity"
+            android:parentActivityName=".activities.LocationListActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".activities.DealsListActivity" />
+        <activity android:name=".activities.DealViewActivity" />
     </application>
 
 </manifest>

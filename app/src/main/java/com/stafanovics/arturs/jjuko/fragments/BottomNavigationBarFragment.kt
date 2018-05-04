@@ -1,4 +1,4 @@
-package com.stafanovics.arturs.jjuko.Fragments
+package com.stafanovics.arturs.jjuko.fragments
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -6,10 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import com.stafanovics.arturs.jjuko.Activities.CraftsmanListActivity
-import com.stafanovics.arturs.jjuko.Activities.DealsListActivity
-import com.stafanovics.arturs.jjuko.Activities.LocationListActivity
 import com.stafanovics.arturs.jjuko.R
+import com.stafanovics.arturs.jjuko.activities.CraftsmanListActivity
+import com.stafanovics.arturs.jjuko.activities.DealsListActivity
+import com.stafanovics.arturs.jjuko.activities.LocationListActivity
 import org.jetbrains.anko.find
 import org.jetbrains.anko.startActivity
 

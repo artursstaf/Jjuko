@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/dust_scratches"
-    tools:context="com.stafanovics.arturs.jjuko.Activities.LocationListActivity">
+    tools:context="com.stafanovics.arturs.jjuko.activities.LocationListActivity">
 
     <ListView
         android:id="@+id/list_speciality"
@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/fragment_speciality_bottom_nav"
-        android:name="com.stafanovics.arturs.jjuko.Fragments.BottomNavigationBarFragment"
+        android:name="com.stafanovics.arturs.jjuko.fragments.BottomNavigationBarFragment"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         app:layout_constraintBottom_toBottomOf="parent"

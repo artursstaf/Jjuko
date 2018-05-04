@@ -1,4 +1,4 @@
-package com.stafanovics.arturs.jjuko.DataClasses
+package com.stafanovics.arturs.jjuko.dataClasses
 
 import java.io.Serializable
 

@@ -1,4 +1,4 @@
-package com.stafanovics.arturs.jjuko.Adapters
+package com.stafanovics.arturs.jjuko.adapters
 
 import android.app.Activity
 import android.content.Context
@@ -7,19 +7,19 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.RatingBar
 import android.widget.TextView
-import com.stafanovics.arturs.jjuko.Activities.CraftsmanActivity
-import com.stafanovics.arturs.jjuko.Constants.INTENT_CITY
-import com.stafanovics.arturs.jjuko.Constants.INTENT_CRAFTSMAN
-import com.stafanovics.arturs.jjuko.Constants.INTENT_SPECIALITY
-import com.stafanovics.arturs.jjuko.DataClasses.City
-import com.stafanovics.arturs.jjuko.DataClasses.Craftsman
-import com.stafanovics.arturs.jjuko.DataClasses.Speciality
 import com.stafanovics.arturs.jjuko.R
+import com.stafanovics.arturs.jjuko.activities.CraftsmanActivity
+import com.stafanovics.arturs.jjuko.constants.INTENT_CITY
+import com.stafanovics.arturs.jjuko.constants.INTENT_CRAFTSMAN
+import com.stafanovics.arturs.jjuko.constants.INTENT_SPECIALITY
+import com.stafanovics.arturs.jjuko.dataClasses.City
+import com.stafanovics.arturs.jjuko.dataClasses.Craftsman
+import com.stafanovics.arturs.jjuko.dataClasses.Speciality
 import org.jetbrains.anko.startActivity
 import java.io.Serializable
 
-class CraftsmanListAdapter(val ctx: Context, val resource: Int, val craftsmen: List<Craftsman>,
-                           val location: City, val speciality: Speciality) : ArrayAdapter<Craftsman>(ctx, resource, craftsmen) {
+class CraftsmanListAdapter(private val ctx: Context, private val resource: Int, private val craftsmen: List<Craftsman>,
+                           private val location: City, private val speciality: Speciality) : ArrayAdapter<Craftsman>(ctx, resource, craftsmen) {
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val view = convertView

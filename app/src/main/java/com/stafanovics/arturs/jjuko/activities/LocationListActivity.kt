@@ -1,4 +1,4 @@
-package com.stafanovics.arturs.jjuko.Activities
+package com.stafanovics.arturs.jjuko.activities
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -6,12 +6,12 @@ import android.view.Menu
 import android.view.MenuItem
 import com.firebase.ui.auth.AuthUI
 import com.google.firebase.auth.FirebaseAuth
-import com.stafanovics.arturs.jjuko.Adapters.LocationlistAdapter
-import com.stafanovics.arturs.jjuko.DataClasses.City
-import com.stafanovics.arturs.jjuko.DataClasses.Craftsman
-import com.stafanovics.arturs.jjuko.Events.CraftsmanUpdated.OnCraftsmanUpdatedEventListener
 import com.stafanovics.arturs.jjuko.MyApplication
 import com.stafanovics.arturs.jjuko.R
+import com.stafanovics.arturs.jjuko.adapters.LocationlistAdapter
+import com.stafanovics.arturs.jjuko.dataClasses.City
+import com.stafanovics.arturs.jjuko.dataClasses.Craftsman
+import com.stafanovics.arturs.jjuko.events.OnCraftsmanUpdatedEventListener
 import kotlinx.android.synthetic.main.activity_location_list.*
 import org.jetbrains.anko.toast
 import java.util.*
@@ -22,7 +22,6 @@ class LocationListActivity : AppCompatActivity() {
 
     //Static objects
     companion object {
-        private const val LOG_FIREBASE = "Firestore"
         private const val RC_SIGN_IN = 123
         private val providers = listOf(AuthUI.IdpConfig.EmailBuilder().build(),
                 AuthUI.IdpConfig.GoogleBuilder().build())
@@ -30,7 +29,7 @@ class LocationListActivity : AppCompatActivity() {
 
     //members
     private var mUsername: String = ""
-    private val mLocationAdapter by lazy { LocationlistAdapter(this, R.layout.location_list_item, ArrayList<City>()) }
+    private val mLocationAdapter by lazy { LocationlistAdapter(this, R.layout.location_list_item, ArrayList()) }
     private val mFirebaseAuth = FirebaseAuth.getInstance()
     private val mMyApplication by lazy { application as MyApplication }
 

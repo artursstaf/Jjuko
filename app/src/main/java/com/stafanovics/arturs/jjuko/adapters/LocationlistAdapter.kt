@@ -1,4 +1,4 @@
-package com.stafanovics.arturs.jjuko.Adapters
+package com.stafanovics.arturs.jjuko.adapters
 
 import android.app.Activity
 import android.content.Context
@@ -6,15 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
-import com.stafanovics.arturs.jjuko.Activities.SpecialityListActivity
-import com.stafanovics.arturs.jjuko.Constants.INTENT_CITY
-import com.stafanovics.arturs.jjuko.DataClasses.City
 import com.stafanovics.arturs.jjuko.R
+import com.stafanovics.arturs.jjuko.activities.SpecialityListActivity
+import com.stafanovics.arturs.jjuko.constants.INTENT_CITY
+import com.stafanovics.arturs.jjuko.dataClasses.City
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 import java.io.Serializable
 
-class LocationlistAdapter(private val ctx: Context, private val resource: Int, private val cities: List<City>) : ArrayAdapter<City>(ctx, resource, cities) {
+class LocationlistAdapter(private val ctx: Context, resource: Int, private val cities: List<City>) : ArrayAdapter<City>(ctx, resource, cities) {
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
 

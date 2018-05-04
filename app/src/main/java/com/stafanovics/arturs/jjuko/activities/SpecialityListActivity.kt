@@ -1,20 +1,20 @@
-package com.stafanovics.arturs.jjuko.Activities
+package com.stafanovics.arturs.jjuko.activities
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.stafanovics.arturs.jjuko.Adapters.SpecialityListAdapter
-import com.stafanovics.arturs.jjuko.Constants.INTENT_CITY
-import com.stafanovics.arturs.jjuko.DataClasses.City
-import com.stafanovics.arturs.jjuko.DataClasses.Craftsman
-import com.stafanovics.arturs.jjuko.DataClasses.Speciality
-import com.stafanovics.arturs.jjuko.Events.CraftsmanUpdated.OnCraftsmanUpdatedEventListener
 import com.stafanovics.arturs.jjuko.MyApplication
 import com.stafanovics.arturs.jjuko.R
+import com.stafanovics.arturs.jjuko.adapters.SpecialityListAdapter
+import com.stafanovics.arturs.jjuko.constants.INTENT_CITY
+import com.stafanovics.arturs.jjuko.dataClasses.City
+import com.stafanovics.arturs.jjuko.dataClasses.Craftsman
+import com.stafanovics.arturs.jjuko.dataClasses.Speciality
+import com.stafanovics.arturs.jjuko.events.OnCraftsmanUpdatedEventListener
 import kotlinx.android.synthetic.main.activity_speciality_list.*
 
 class SpecialityListActivity : AppCompatActivity() {
 
-    private val mListAdapter by lazy { SpecialityListAdapter(this, R.layout.speciality_list_item, ArrayList<Speciality>(), mFilterCity) }
+    private val mListAdapter by lazy { SpecialityListAdapter(this, R.layout.speciality_list_item, ArrayList(), mFilterCity) }
     private val mMyApplication by lazy { application as MyApplication }
     private val mFilterCity by lazy { intent.extras.get(INTENT_CITY) as City }
 

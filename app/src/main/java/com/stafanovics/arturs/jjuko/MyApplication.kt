@@ -6,14 +6,14 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.FirebaseFirestoreException
 import com.google.firebase.firestore.ListenerRegistration
 import com.google.firebase.firestore.QuerySnapshot
-import com.stafanovics.arturs.jjuko.Constants.LOGD_FIRESTORE
-import com.stafanovics.arturs.jjuko.DataClasses.Craftsman
-import com.stafanovics.arturs.jjuko.DataClasses.Deal
-import com.stafanovics.arturs.jjuko.Events.CraftsmanUpdated.OnCraftsmanUpdatedEventListener
+import com.stafanovics.arturs.jjuko.constants.LOGD_FIRESTORE
+import com.stafanovics.arturs.jjuko.dataClasses.Craftsman
+import com.stafanovics.arturs.jjuko.dataClasses.Deal
+import com.stafanovics.arturs.jjuko.events.OnCraftsmanUpdatedEventListener
 
 
-class MyApplication(val craftsmen: MutableList<Craftsman> = ArrayList<Craftsman>(), val deals: MutableList<Deal> = ArrayList<Deal>(),
-                    private val onCraftsmanUpdatedEventListeners: MutableList<OnCraftsmanUpdatedEventListener> = ArrayList<OnCraftsmanUpdatedEventListener>()
+class MyApplication(val craftsmen: MutableList<Craftsman> = ArrayList(), val deals: MutableList<Deal> = ArrayList(),
+                    private val onCraftsmanUpdatedEventListeners: MutableList<OnCraftsmanUpdatedEventListener> = ArrayList()
 ) : Application() {
 
     private val mFirestore by lazy { FirebaseFirestore.getInstance() }
@@ -21,6 +21,7 @@ class MyApplication(val craftsmen: MutableList<Craftsman> = ArrayList<Craftsman>
 
     override fun onCreate() {
         super.onCreate()
+        //Bad - because listening to all changes in database
         mLocationListenerRegistration = mFirestore.collection("Craftsmen").addSnapshotListener(mLocationEventListener)
     }
 
@@ -43,9 +44,8 @@ class MyApplication(val craftsmen: MutableList<Craftsman> = ArrayList<Craftsman>
             try {
                 craftsmen.add(it.toObject(Craftsman::class.java).also { it.id = id })
             } catch (e: Exception) {
-                Log.d(LOGD_FIRESTORE, "Error serializing firestore snapshot, item skipped")
+                Log.d(LOGD_FIRESTORE, "Error deserializing firestore snapshot, item skipped")
             }
-
         }
         onCraftsmanUpdatedEventListeners.forEach { it.onEvent(craftsmen) }
         Unit

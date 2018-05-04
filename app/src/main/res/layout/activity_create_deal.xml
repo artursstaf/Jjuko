@@ -207,7 +207,7 @@
 
     <fragment
         android:id="@+id/fragment_create_deal_bottom_nav"
-        android:name="com.stafanovics.arturs.jjuko.Fragments.BottomNavigationBarFragment"
+        android:name="com.stafanovics.arturs.jjuko.fragments.BottomNavigationBarFragment"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
