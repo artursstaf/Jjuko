@@ -9,30 +9,15 @@
     android:focusableInTouchMode="true"
     tools:context="com.stafanovics.arturs.jjuko.activities.LocationListActivity">
 
-    <SearchView
-        android:id="@+id/search_location_list"
-        android:layout_width="0dp"
-        android:layout_height="30dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:hapticFeedbackEnabled="false"
-        android:iconifiedByDefault="false"
-        app:layout_constraintBottom_toTopOf="@+id/list_location_list"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ListView
         android:id="@+id/list_location_list"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
         android:focusable="false"
         app:layout_constraintBottom_toTopOf="@id/fragment_location_list_bottom_nav"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/search_location_list">
+        app:layout_constraintTop_toTopOf="parent">
 
     </ListView>
 

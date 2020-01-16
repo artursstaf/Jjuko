@@ -139,29 +139,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/edit_create_deal_description" />
 
-            <ImageButton
-                android:id="@+id/image_create_deal_foto_upload"
-                android:layout_width="67dp"
-                android:layout_height="42dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginTop="8dp"
-                android:contentDescription="@string/msg_upload_icon"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edit_create_deal_description"
-                app:srcCompat="@android:drawable/ic_menu_upload" />
-
-            <TextView
-                android:id="@+id/text_create_deal_foto"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginStart="8dp"
-                android:fontFamily="@font/comfortaa"
-                android:text="@string/msg_foto"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                app:layout_constraintBottom_toBottomOf="@+id/image_create_deal_foto_upload"
-                app:layout_constraintStart_toStartOf="@+id/check_create_deal"
-                app:layout_constraintTop_toTopOf="@+id/image_create_deal_foto_upload" />
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
 

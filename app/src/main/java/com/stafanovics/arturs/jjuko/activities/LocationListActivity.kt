@@ -68,10 +68,6 @@ class LocationListActivity : AppCompatActivity() {
                 AuthUI.getInstance().signOut(this)
                 return true
             }
-            R.id.menu_profile -> {
-                toast("Nestrādā :(")
-                return true
-            }
             else -> super.onOptionsItemSelected(item)
         }
     }

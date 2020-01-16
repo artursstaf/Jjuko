@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "247359735134-kc8qps5cb1onaq2cibnh37ktcpi77gvq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.stafanovics.arturs.jjuko",
+            "certificate_hash": "9639944b323e7c4e2f9de6774b7b26b148416040"
+          }
+        },
+        {
           "client_id": "247359735134-pn0smmqjvnrl23crr818q4boqvaingip.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
@@ -33,20 +41,13 @@
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 2,
           "other_platform_oauth_client": [
             {
               "client_id": "247359735134-7j6euvpn3jdjmd5o0r31nv3kqmf79vjj.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
-        },
-        "ads_service": {
-          "status": 2
         }
       }
     }

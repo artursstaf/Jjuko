@@ -14,7 +14,6 @@ class DealsListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_deals_list)
         title = getString(R.string.title_deal_list)
-
         val deals = (application as MyApplication).deals
 
         list_deals_list.adapter = DealListAdapter(ctx, R.layout.deals_list_item, deals)
