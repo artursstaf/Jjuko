@@ -34,7 +34,6 @@ class CraftsmanActivity : AppCompatActivity() {
         title = getString(R.string.title_craftsman)
         text_craftsman_full_name.text = getString(R.string.msg_craftsman_full_name, mCraftsman.name, mCraftsman.surname)
 
-        //Need Dynamic available time array
         val adapter = ArrayAdapter.createFromResource(ctx, R.array.dates_array, android.R.layout.simple_spinner_item)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinner_craftsman_time.adapter = adapter

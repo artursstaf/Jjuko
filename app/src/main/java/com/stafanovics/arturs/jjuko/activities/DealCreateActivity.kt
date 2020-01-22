@@ -13,6 +13,7 @@ import com.stafanovics.arturs.jjuko.dataClasses.City
 import com.stafanovics.arturs.jjuko.dataClasses.Craftsman
 import com.stafanovics.arturs.jjuko.dataClasses.Deal
 import com.stafanovics.arturs.jjuko.dataClasses.Speciality
+import com.stafanovics.arturs.jjuko.events.OnDealUpdatedEventListener
 import kotlinx.android.synthetic.main.activity_create_deal.*
 import org.jetbrains.anko.longToast
 import org.jetbrains.anko.startActivity
@@ -48,9 +49,9 @@ class DealCreateActivity : AppCompatActivity() {
         button_create_deal_cancel.setOnClickListener { onBackPressed() }
         button_create_deal_reserve.setOnClickListener {
             val desc = edit_create_deal_description.text.toString()
-            val id = UUID.randomUUID().toString()
-            val deal = Deal(id, mCraftsman, mCalendar?.timeInMillis ?: 0, false, desc, id)
-            mMyApplication.deals.add(deal)
+            //val id = UUID.randomUUID().toString()
+            val deal = Deal(mMyApplication.userId, mCraftsman, mCalendar?.timeInMillis ?: 0, false, desc)
+            mMyApplication.mFirestore.collection("Reservations").add(deal)
 
             longToast(getString(R.string.msg_reservation_accepted))
             startActivity<DealsListActivity>()

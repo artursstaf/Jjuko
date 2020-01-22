@@ -2,15 +2,20 @@ package com.stafanovics.arturs.jjuko.activities
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import com.firebase.ui.auth.AuthUI
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestoreException
+import com.google.firebase.firestore.QuerySnapshot
 import com.stafanovics.arturs.jjuko.MyApplication
 import com.stafanovics.arturs.jjuko.R
 import com.stafanovics.arturs.jjuko.adapters.LocationlistAdapter
+import com.stafanovics.arturs.jjuko.constants.LOGD_FIRESTORE
 import com.stafanovics.arturs.jjuko.dataClasses.City
 import com.stafanovics.arturs.jjuko.dataClasses.Craftsman
+import com.stafanovics.arturs.jjuko.dataClasses.Deal
 import com.stafanovics.arturs.jjuko.events.OnCraftsmanUpdatedEventListener
 import kotlinx.android.synthetic.main.activity_location_list.*
 import org.jetbrains.anko.toast
@@ -86,7 +91,6 @@ class LocationListActivity : AppCompatActivity() {
         }
     }
 
-
     //Auth listener
     private val mFirebaseAuthStateListener: FirebaseAuth.AuthStateListener by lazy {
         FirebaseAuth.AuthStateListener { firebaseAuth ->
@@ -94,10 +98,34 @@ class LocationListActivity : AppCompatActivity() {
 
             if (user != null) {
                 //Signin
+                mMyApplication.userId = user.uid
                 mUsername = user.displayName ?: ""
+                val x = listener@{ querySnapshot: QuerySnapshot?, _: FirebaseFirestoreException? ->
+                    if (querySnapshot == null) return@listener
+                    mMyApplication.deals.clear()
+                    querySnapshot.forEach {
+                        val id = it.id
+                        try {
+                            val obj = it.toObject(Deal::class.java).also { it.id = id }
+                            if (obj.userId == user.uid) {
+                                mMyApplication.deals.add(obj)
+                            }
+
+                        } catch (e: Exception) {
+                            Log.d(LOGD_FIRESTORE, "Error deserializing firestore snapshot, item skipped")
+                        }
+                    }
+                    mMyApplication.onDealUpdatedEventListeners.forEach { it.onEvent(mMyApplication.deals) }
+                    Unit
+                }
+                mMyApplication.mDealListenerRegistration?.remove()
+                mMyApplication.mDealListenerRegistration = mMyApplication.mFirestore.collection("Reservations").addSnapshotListener(x)
+
+
             } else {
                 //Signout cleanup
                 mUsername = ""
+                mMyApplication.userId = ""
                 startActivityForResult(
                         AuthUI.getInstance()
                                 .createSignInIntentBuilder()

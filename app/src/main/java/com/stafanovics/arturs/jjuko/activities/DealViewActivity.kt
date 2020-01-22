@@ -15,8 +15,6 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class DealViewActivity : AppCompatActivity() {
-
-    private val mMyApplication by lazy { application as MyApplication }
     private val mDeal by lazy { intent.extras.get(INTENT_DEAL) as Int }
     private val mDeals by lazy { (application as MyApplication).deals }
 
@@ -42,7 +40,7 @@ class DealViewActivity : AppCompatActivity() {
         button_create_deal_reserve.visibility = View.GONE
         button_create_deal_cancel.setOnClickListener {
             longToast("Darījums atcelts!")
-            (application as MyApplication).deals.removeAt(mDeal)
+            (application as MyApplication).mFirestore.collection("Reservations").document(deal.id).delete()
             startActivity<DealsListActivity>()
         }
     }

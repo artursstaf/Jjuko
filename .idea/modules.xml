@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/AndroidStudioProjects-Jjuko.iml" filepath="$PROJECT_DIR$/AndroidStudioProjects-Jjuko.iml" />
       <module fileurl="file://$PROJECT_DIR$/Jjuko.iml" filepath="$PROJECT_DIR$/Jjuko.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/Jjuko-app.iml" filepath="$PROJECT_DIR$/app/Jjuko-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

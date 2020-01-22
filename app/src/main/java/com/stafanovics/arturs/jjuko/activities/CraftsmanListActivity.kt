@@ -43,7 +43,7 @@ class CraftsmanListActivity : AppCompatActivity() {
     }
 
     private fun filterCraftsmen(craftsmen: List<Craftsman>) =
-            craftsmen.mapNotNull { if (it.speciality.contains(mFilterSpeciality)) it else null }
+            craftsmen.filter { it.speciality.contains(mFilterSpeciality) }
 
     private fun filterCity(craftsmen: List<Craftsman>) =
             craftsmen.filter { it.locations.contains(mFilterCity) }
@@ -51,7 +51,7 @@ class CraftsmanListActivity : AppCompatActivity() {
     private val mSpecialityListener = object : OnCraftsmanUpdatedEventListener {
         override fun onEvent(craftsmen: List<Craftsman>) {
             mListAdapter.clear()
-            mListAdapter.addAll(filterCraftsmen(craftsmen))
+            mListAdapter.addAll(filterCity(filterCraftsmen(craftsmen)))
         }
     }
 }
